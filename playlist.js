@@ -65,8 +65,7 @@ Playlist.prototype.playFirst = function() {
  * The length method returns the total number of elements in an array and the if statement makes
  * sure you can skip only if there is another song with "> 1." The shift method removes the first
  * element of an array to shift it forward and return that removed element. The currentSong will
- * be the new song skipped to.
- . 
+ * be the new song skipped to. 
  */
 
 Playlist.prototype.skipSong = function() {
@@ -79,20 +78,51 @@ Playlist.prototype.skipSong = function() {
   }
 };
 
+/**
+ * The method listSongs has the purpose to display the playlist name. (with this.name printing myChillMix)
+ * A comma-separated list of all songs are made with this.songs.join.  The join method separates with a comma
+ * since it's parameter is: (","). The output shows us a formatted string 
+ * summary in the console. 'this' refers to the Playlist instance to access 'name' and 'songs'.
+ * The first title "Lofi Study" was skipped printing only "Chillhop Beats, Evening Jazz"
+ */
+
 Playlist.prototype.listSongs = function() {
   console.log("Playlist:", this.name);
   console.log("Songs:", this.songs.join(", "));
 };
+/**
+ * This is our new method caalled: clearPlaylist
+ * The purpose is to remove all songs from the playlist and reset currentSong.
+ * 'this' refers to the instance being cleared. We will invoke this method with
+ * myMix.clearPlaylist(); and there will be a message that returns.  If we try to invoke 
+ * myMix.skipSong(); a message returns that there are "no more songs to skip."
+ */
+Playlist.prototype.clearPlaylist = function() {
+  this.songs = [];
+  this.currentSong = null;
+  console.log("The playlist has been cleared.");
+};
 
 /**
-It may be helpful to begin studying this code from here.
-The Playlist object uses the new keyword indicating that it's a
-constructor. Constructors can creat more than one object from a single object definition.  The myMix oject uses the
-addSong method to add titles. Three songs are added. The myMix object (or reference to the object)
-also has the playFirst, skipSong and listSongs methods.  The function bodies are
-created above this instantiation statement.
-The parenthesis contains "My Chill Mix" which is the "name" variable of the parameter
-of PlayList at the first function. See function PlayList above.*/
+ * IMPROVEMENT SUGGESTION:
+ * I would add an else clause to the if statement of the playFirst() method, with a message.
+ * else { console.log(" The playList has been cleared and is empty. Please add songs to the mix."); }
+ * Also another suggestion is to use the class keywork and constructor keyword. Instead of using the old
+ * Prototype syntax, this code should be refactored into a modern ES6 'class' structure for better readability and 
+ * to align with 2026 JavaScript standards. Here is an example of the Playlist class, the constructor, and the addSong method: 
+ * class Playlist { constructor(name) { this.name = name; this.songs = []; this.currentSong = null; }
+ * addSong(songTitle) { this.songs.push(songTitle); }
+ */
+
+
+/**
+* It may be helpful to begin studying this code from here. The Playlist object uses the new
+* keyword indicating an instance in a class.  Constructors can create more than one object from a
+* single object definition.  The myMix oject uses the addSong method to add titles. Three songs
+* are added. The myMix object also has the playFirst, skipSong and listSongs methods.  The function
+* bodies of each are created above.  The parenthesis contains "My Chill Mix" which
+* is the "name" variable of the parameter of PlayList at the first function above.
+*/
 let myMix = new Playlist("My Chill Mix");
 myMix.addSong("Lofi Study");
 myMix.addSong("Chillhop Beats");
