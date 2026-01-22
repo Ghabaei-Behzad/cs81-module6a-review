@@ -4,14 +4,6 @@
 // playlist.js
 // 1/21/2026
 
-//What the constructor is doing
-//What each method does and how it works
-//What the outputs mean
-//What 'this' refers to in each method
-
-//Add one improvement suggestion in the form of a comment
-//Add one new method to extend the object’s behavior
-
 /**
  * The constructor: Initializes a new Playlist instance. The parameter of Playlist is
  * "name" which can be used due to the new operator passing "MyChillMix".
