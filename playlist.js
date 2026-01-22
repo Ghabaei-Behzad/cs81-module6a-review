@@ -57,6 +57,18 @@ Playlist.prototype.playFirst = function() {
   }
 };
 
+/**
+ * This is the method called skipSong with the
+ * purpose of removing the first song from the array and moving on to the next one.
+ * The output will log the new current song or a message telling us that no songs remain.
+ * 'this' refers to the Playlist instance to modify the 'songs' array and 'currentSong' property.
+ * The length method returns the total number of elements in an array and the if statement makes
+ * sure you can skip only if there is another song with "> 1." The shift method removes the first
+ * element of an array to shift it forward and return that removed element. The currentSong will
+ * be the new song skipped to.
+ . 
+ */
+
 Playlist.prototype.skipSong = function() {
   if (this.songs.length > 1) {
     this.songs.shift();
