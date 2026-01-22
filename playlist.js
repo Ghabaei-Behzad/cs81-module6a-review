@@ -41,6 +41,15 @@ Playlist.prototype.addSong = function(songTitle) {
   this.songs.push(songTitle);
 };
 
+/**
+ * The method called playFirst has the purpose of setting the first item in the
+ * array as the currentSong.  The Output will log the title of the first song to the console.
+ * 'this' refers to the Playlist instance to access its internal 'songs' array.  The if statement
+ * contains a comparison condition statement that is a safety check ensuring that the playlist contains
+ * at least one song before trying to play it. This prevents 'undefined' on an empty playlist, checking
+ * the array with the .length method. The this.songs[0] refers to the first array element.
+ */
+
 Playlist.prototype.playFirst = function() {
   if (this.songs.length > 0) {
     this.currentSong = this.songs[0];
