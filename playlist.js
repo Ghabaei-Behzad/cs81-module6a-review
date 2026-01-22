@@ -27,6 +27,16 @@ function Playlist(name) {
   this.currentSong = null;
 }
 
+/**
+ * This block contains a method called addSong. It uses the object prototype, which is
+ * the mechanism by which JavaScript objects inherit features from one another.  
+ * Every object in JavaScript has a built-in property, called a prototype.
+ * The purpose is to add a new song title string to the 'songs' array.
+ * 'this' refers to the Playlist instance calling the method (myMix). The push method adds
+ * a songTitle to a stack of songs with the keyword "this" which is referring to the current object
+ * the code is being executed in. 
+ */
+
 Playlist.prototype.addSong = function(songTitle) {
   this.songs.push(songTitle);
 };
